@@ -1,0 +1,46 @@
+.container {
+    width: 100%;
+}
+
+#new_offer input[type=text], input[type=number], textarea {
+    width: calc(100% - 24px);
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+#new_offer label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+#new_offer .error {
+    color: red;
+}
+
+#new_offer .btn {
+    color: white !important;
+    text-decoration: none !important;
+    background:    #073763;
+    background:    -webkit-linear-gradient(#073763, #3d85c6);
+    background:    linear-gradient(#073763, #3d85c6);
+    border-radius: 5px;
+    padding:       8px 20px;
+    color:         #ffffff;
+    display:       inline-block;
+    font:          normal 700 24px/1 "Calibri", sans-serif;
+    text-align:    center;
+    text-shadow:   1px 1px #000000;
+    cursor: pointer;
+}
+
+#new_offer .btn:hover {
+    background-color: #45a049;
+}
+
+.form-cnt {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}

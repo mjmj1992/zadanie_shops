@@ -1,0 +1,10 @@
+h1 Products
+.container
+    ul.products
+        - @view.products.each do |product|
+            a.product-link(href=product_path(product[:id]))
+                li.product
+                    .product-name  =product[:name]
+                    .product-price =product[:human_price]
+                    .product-brand =product[:brand]
+                    .product-model =product[:model]

@@ -1,0 +1,8 @@
+h1 New offer
+.container
+    .form-cnt
+        = simple_form_for @offer, url: product_offers_path do |f|
+            = f.input :price_in_cents
+            = f.input :shipping_price_in_cents
+            = f.input :address
+            = f.button :submit

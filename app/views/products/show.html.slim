@@ -1,0 +1,37 @@
+a.btn(href=root_path) << Back
+h1 Product
+.product
+    .product-name    =@view.product[:name]
+    .product-price   =@view.product[:human_price]
+    .product-brand   =@view.product[:brand]
+    .product-model   =@view.product[:model]
+    .product-address =@view.product[:address]
+
+h2 Offers
+a.btn(href=new_product_offer_path(@view.product[:id])) Add offer
+- if @view.offers.any?
+    ul.offers
+        - @view.offers.each do |offer|
+            li.offer(data-reject-url=product_offer_reject_path(@view.product[:id], offer[:id]))
+                .offer-price          
+                    | Price: 
+                    =offer[:human_price]
+                .offer-shipping-price 
+                    | Shipping price: 
+                    =offer[:human_shipping_price]
+                .offer-address
+                    | Address: 
+                    =offer[:address]
+                .offer-rejected
+                    | Rejected: 
+                    span.rejected-status=offer[:human_rejected]
+                .offer-actions
+                    .btn.btn-change-rejected-status
+                        - if offer[:rejected]
+                            | Recover
+                        - else
+                            | Reject
+- else
+    .no-offers-message-cnt
+        .no-offers-message
+            | There is no offers yet
