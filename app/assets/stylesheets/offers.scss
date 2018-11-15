@@ -2,7 +2,9 @@
     width: 100%;
 }
 
-#new_offer input[type=text], input[type=number], textarea {
+#new_offer input[type=text], 
+#new_offer input[type=number], 
+#new_offer textarea {
     width: calc(100% - 24px);
     padding: 12px;
     border: 1px solid #ccc;

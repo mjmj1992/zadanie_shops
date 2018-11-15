@@ -10,7 +10,7 @@ h1 Product
 h2 Offers
 a.btn(href=new_product_offer_path(@view.product[:id])) Add offer
 - if @view.offers.any?
-    ul.offers
+    ul#offers
         - @view.offers.each do |offer|
             li.offer(data-reject-url=product_offer_reject_path(@view.product[:id], offer[:id]))
                 .offer-price          

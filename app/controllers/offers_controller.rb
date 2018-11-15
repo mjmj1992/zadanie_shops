@@ -1,18 +1,18 @@
 class OffersController < ApplicationController
   
   def new
-    product = shop.products.find(params[:product_id])
-    @offer = product.offers.new
+    @product = shop.products.find(params[:product_id])
+    @offer = @product.offers.new
     rescue ActiveRecord::RecordNotFound
       redirect_to root_path
   end
 
   def create
     product = shop.products.find(params[:product_id])
-    @offer = product.offers.new(permitted_params)
-    @offer.shop_name = shop.name
-    if @offer.valid?
-      @offer.save
+    offer = product.offers.new(permitted_params)
+    offer.shop_name = shop.name
+    if offer.valid?
+      offer.save
       redirect_to product_path(product.id)
     else
       render 'new'
