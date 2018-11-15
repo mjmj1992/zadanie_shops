@@ -17,6 +17,8 @@ class OffersController < ApplicationController
     else
       render 'new'
     end
+    rescue ActiveRecord::RecordNotFound
+      redirect_to root_path
   end
 
   def reject
@@ -28,6 +30,8 @@ class OffersController < ApplicationController
     else
       render json: {status: :error, msg: 'Something went wrong'}
     end
+    rescue ActiveRecord::RecordNotFound
+      render json: {status: :error, msg: 'Something went wrong'}
   end
 
   private
